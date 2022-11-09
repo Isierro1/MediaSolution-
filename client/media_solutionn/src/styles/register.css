@@ -1,0 +1,138 @@
+.register-title {
+  font-size: 150px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: rgb(197, 197, 197);
+}
+
+.register-to-ms {
+  position: absolute;
+  left: 44%;
+  font-size: 17px;
+  font-weight: 700;
+  color: rgb(97, 95, 95);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.text-to-define {
+  position: absolute;
+  left: 45.5%;
+  top: 40%;
+  color: rgb(97, 95, 95);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.register-div {
+  position: absolute;
+  left: 38.5%;
+  top: 45%;
+}
+
+.register-inputs {
+  border-style: none;
+  border-radius: 5px;
+  background-color: #333333;
+  color: white;
+  width: 300px;
+  height: 30px;
+  text-align: left;
+  padding: 10px;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+ 
+.register-form {
+  line-height: 3.3;
+}
+
+
+.register-checkbox {
+  position: absolute;
+  left: 4px;
+}
+
+.register-terms {
+  position: absolute;
+  top: 185.14px;
+  left: 24px;
+  color: rgb(97, 95, 95);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.register-button-div{
+  position: absolute;
+  top: 235px;
+  left: 3px;
+  text-align: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.register-button {
+  border-style: none;
+  border-radius: 5px;
+  font-weight: 400;
+  font-size: 15px;
+  color: white;
+  width: 300px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #8b8a8a;
+}
+
+.register-button:hover {
+  opacity: 0.7;
+  color: black;
+}
+
+.register-logIn{
+position: absolute;
+top: 270px;
+left: 44.5px;
+font-size: 13.5px;
+color: rgb(97, 95, 95);
+}
+
+.register-copyright {
+  position: absolute;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  top: 299px;
+  font-size: 12px;
+  color: rgb(97, 95, 95);
+  left: 15px;
+}
+
+.error-user {
+  position: absolute;
+  color:red;
+  font-size: 11px;
+  top: 27.5px;
+  left: 198px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.error-email {
+  position: absolute;
+  color:red;
+  font-size: 11px;
+  top: 74px;
+  left: 135px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.error-password {
+  position: absolute;
+  color:red;
+  font-size: 11px;
+  top: 120px;
+  left: 68px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.error-repeat-password {
+  position: absolute;
+  color:red;
+  font-size: 11px;
+  top: 170px;
+  left: 68px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
