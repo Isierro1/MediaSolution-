@@ -32,10 +32,9 @@ import { login } from "../redux/actions/index";
 //   };
 
 const Login = () => {
-    
-let url = "https://www.timesolution.com.ar/";
+  let url = "https://www.timesolution.com.ar/";
 
-const dispatch = useDispatch();
+  const dispatch = useDispatch();
   // const usernames = useSelector((state) => state.usernames);
   const navigate = useNavigate();
 
@@ -44,7 +43,7 @@ const dispatch = useDispatch();
     password: "",
   });
 
-  const [errors, setErrors] = useState({});
+  // const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
     setInput({
@@ -52,22 +51,22 @@ const dispatch = useDispatch();
       [e.target.name]: e.target.value,
     });
 
-//     setErrors(
-//       validate({
-//         ...input,
-//         [e.target.name]: e.target.value,
-//       })
-//     );
-   };
+    //     setErrors(
+    //       validate({
+    //         ...input,
+    //         [e.target.name]: e.target.value,
+    //       })
+    //     );
+  };
 
   function handleSubmit(e) {
-      e.preventDefault(); 
-      dispatch(login(input))
-      setInput({
-        username: "",
-        password: "",
-      });
-      navigate("/Perfil");
+    e.preventDefault();
+    dispatch(login(input));
+    setInput({
+      username: "",
+      password: "",
+    });
+    navigate("/Perfil");
   }
 
   return (

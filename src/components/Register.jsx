@@ -4,7 +4,7 @@ import "../styles/register.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { register, register2 } from "../redux/actions";
+import { register } from "../redux/actions";
 
 const validate = (input) => {
   let errors = {};
@@ -18,7 +18,7 @@ const validate = (input) => {
     errors.repeat_Password = "*Campo requerido";
   } else if (
     !input.email.match(
-      /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/
+      /^([a-zA-Z0-9_\-.]+)@([a-zA-Z0-9_\-.]+)\.([a-zA-Z]{2,5})$/
     )
   ) {
     errors.email = "*Formato de email incorrecto.";
@@ -69,7 +69,7 @@ const Register = () => {
       input.password &&
       input.repeat_Password
     ) {
-      dispatch(register(input))
+      dispatch(register(input));
       alert("Usuario creado satisfactoriamente");
       setInput({
         username: "",
@@ -82,7 +82,6 @@ const Register = () => {
       alert("El usuario no puede ser creado con estos datos");
     }
   }
-
 
   return (
     <div className="background">
@@ -106,7 +105,9 @@ const Register = () => {
               required
               maxLength={20}
             ></input>
-            {errors.username && <div className="error-user">{errors.username}</div>}
+            {errors.username && (
+              <div className="error-user">{errors.username}</div>
+            )}
           </div>
           <div>
             <input
