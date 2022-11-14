@@ -3,14 +3,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/register.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { register, register2 } from "../redux/actions";
+import supabase from "../supabase";
 
 const validate = (input) => {
   let errors = {};
-  if (input.username === "") {
-    errors.username = "*Campo requerido";
-  } else if (input.email === "") {
+   if (input.email === "") {
     errors.email = "*Campo requerido";
   } else if (input.password === "") {
     errors.password = "*Campo requerido";
@@ -33,12 +30,9 @@ const validate = (input) => {
 const Register = () => {
   let url = "https://www.timesolution.com.ar/";
 
-  const dispatch = useDispatch();
-  // const usernames = useSelector((state) => state.usernames);
   const navigate = useNavigate();
 
   const [input, setInput] = useState({
-    username: "",
     email: "",
     password: "",
     repeat_Password: "",
@@ -60,29 +54,29 @@ const Register = () => {
     );
   };
 
-  function handleSubmit(e) {
+  const signUp = async (e) => {
     e.preventDefault();
     if (
       !Object.getOwnPropertyNames(errors).length &&
-      input.username &&
       input.email &&
       input.password &&
       input.repeat_Password
     ) {
-      dispatch(register(input))
-      alert("Usuario creado satisfactoriamente");
-      setInput({
-        username: "",
-        email: "",
-        password: "",
-        repeat_Password: "",
+      const { user, session, error } = await supabase.auth.signUp({
+        email: input.email,
+        password: input.password,
       });
-      navigate("/Login");
-    } else {
-      alert("El usuario no puede ser creado con estos datos");
-    }
+      setInput({
+        email: '',
+        password: '',
+        repeat_Password:""
+    });
+      error ? alert(error) : console.log(user);
+      navigate('/Login');
+  } else {
+    alert("Datos Incorrectos")
   }
-
+};
 
   return (
     <div className="background">
@@ -94,20 +88,7 @@ const Register = () => {
       <div className="register-to-ms">Registrate a MS+</div>
       <div className="text-to-define">Texto a Definir.</div>
       <div className="register-div">
-        <form className="register-form" onSubmit={(e) => handleSubmit(e)}>
-          <div>
-            <input
-              className="register-inputs"
-              type="text"
-              placeholder="Usuario"
-              name="username"
-              value={input.username}
-              onChange={(e) => handleChange(e)}
-              required
-              maxLength={20}
-            ></input>
-            {errors.username && <div className="error-user">{errors.username}</div>}
-          </div>
+        <form className="register-form" onSubmit={(e) => signUp(e)}>
           <div>
             <input
               className="register-inputs"
