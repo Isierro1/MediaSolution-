@@ -1,9 +1,11 @@
 import { Helmet } from "react-helmet";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/register.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import supabase from "../supabase";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const validate = (input) => {
   let errors = {};
@@ -30,7 +32,6 @@ const validate = (input) => {
 const Register = () => {
   let url = "https://www.timesolution.com.ar/";
 
-  const navigate = useNavigate();
 
   const [input, setInput] = useState({
     email: "",
@@ -67,15 +68,19 @@ const Register = () => {
         password: input.password,
       }).then((response) => {
         if(response.data.user.identities.length){
-          alert("Por favor confirma tu email y luego podrás ingresar")
-          navigate('/Login')
+          toast.success('Usuario registrado! Por favor confirma tu email para ingresar.');
+          setInput({
+            email: '',
+            password: '',
+            repeat_Password: ""
+        });
         }else {
-          alert("¡Ya estás registrado, ingresa a tu cuenta!")
+          toast.warning("Usuario ya registrado.")
         }
       })
       console.log(error);
   } else {
-    alert("Datos Incorrectos")
+    toast.error("Datos Incorrectos");
   }
 };
 
@@ -143,6 +148,7 @@ const Register = () => {
           </div>
           <div className="register-button-div">
             <button className="register-button">Registrarme</button>
+            <ToastContainer />
           </div>
           <div className="register-logIn">
             ¿Tienes una cuenta? <Link to="/Login">Inicia sesión</Link>
