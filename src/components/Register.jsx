@@ -62,17 +62,18 @@ const Register = () => {
       input.password &&
       input.repeat_Password
     ) {
-      const { user, error } = await supabase.auth.signUp({
+      const { error } = await supabase.auth.signUp({
         email: input.email,
         password: input.password,
-      });
-      setInput({
-        email: '',
-        password: '',
-        repeat_Password:""
-    });
-      error ? alert(error) : console.log(user);
-      navigate('/Login');
+      }).then((response) => {
+        if(response.data.user.identities.length){
+          alert("Por favor confirma tu email y luego podrás ingresar")
+          navigate('/Login')
+        }else {
+          alert("¡Ya estás registrado, ingresa a tu cuenta!")
+        }
+      })
+      console.log(error);
   } else {
     alert("Datos Incorrectos")
   }
