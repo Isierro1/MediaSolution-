@@ -1,7 +1,6 @@
 {
   "name": "media_solutionn",
   "version": "0.1.0",
-  "homepage": "http://www.mediasolution.com.ar/",
   "private": true,
   "dependencies": {
     "@supabase/supabase-js": "^2.1.0",
