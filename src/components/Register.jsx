@@ -68,7 +68,7 @@ const Register = () => {
         password: input.password,
       }).then((response) => {
         if(response.data.user.identities.length){
-          toast.success('Usuario registrado! Por favor confirma tu email para ingresar.');
+          toast.success('Usuario registrado, confirma tu email para ingresar.');
           setInput({
             email: '',
             password: '',
@@ -92,7 +92,7 @@ const Register = () => {
       </Helmet>
       <div className="register-title">MS+</div>
       <div className="register-to-ms">Registrate a MS+</div>
-      <div className="text-to-define">Texto a Definir.</div>
+      <div className="text-to-define">Register to see the magic.</div>
       <div className="register-div">
         <form className="register-form" onSubmit={(e) => signUp(e)}>
           <div>
