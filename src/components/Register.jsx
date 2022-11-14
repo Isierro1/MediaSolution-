@@ -15,7 +15,7 @@ const validate = (input) => {
     errors.repeat_Password = "*Campo requerido";
   } else if (
     !input.email.match(
-      /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/
+      /^([a-zA-Z0-9_\-.]+)@([a-zA-Z0-9_\-.]+)\.([a-zA-Z]{2,5})$/
     )
   ) {
     errors.email = "*Formato de email incorrecto.";
@@ -62,7 +62,7 @@ const Register = () => {
       input.password &&
       input.repeat_Password
     ) {
-      const { user, session, error } = await supabase.auth.signUp({
+      const { user, error } = await supabase.auth.signUp({
         email: input.email,
         password: input.password,
       });

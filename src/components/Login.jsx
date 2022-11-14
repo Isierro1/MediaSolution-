@@ -26,7 +26,7 @@ let url = "https://www.timesolution.com.ar/";
 
    const signIn = async (e) => {
     e.preventDefault();
-    const { user, session, error } = await supabase.auth.signInWithPassword({
+    const { error } = await supabase.auth.signInWithPassword({
       email: input.username,
       password: input.password,
     });
