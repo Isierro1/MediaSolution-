@@ -6,6 +6,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import supabase from "../supabase";
 import { useEffect } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const Login = () => {
     
 let url = "https://www.timesolution.com.ar/";
@@ -34,7 +37,7 @@ let url = "https://www.timesolution.com.ar/";
       username: '',
       password: '',
   });
-    error ? alert(error) : navigate('/Perfil');
+    error ? toast.error("Credenciales incorrectas") : navigate('/Perfil');
     };
 
     useEffect(() => {
@@ -82,6 +85,7 @@ let url = "https://www.timesolution.com.ar/";
           </div>
           <div className="login-button-div">
             <button className="register-button">Iniciar sesión</button>
+            <ToastContainer/>
           </div>
           <div className="login-logIn">
             ¿Olvidaste tu contraseña? <Link to="/">Recuperála</Link>
