@@ -56,7 +56,7 @@ let url = "https://www.timesolution.com.ar/";
       </Helmet>
       <div className="register-title">MS+</div>
       <div className="register-to-ms">Bienvenido a MS+</div>
-      <div className="text-to-define">Texto a Definir.</div>
+      <div className="login-text-to-define">Let the magic begin</div>
       <div className="register-div">
         <form className="register-form" onSubmit={(e) => signIn(e)}>
           <div>
