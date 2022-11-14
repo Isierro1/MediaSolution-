@@ -5,11 +5,11 @@ import "../styles/login.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import supabase from "../supabase";
+import { useEffect } from "react";
 const Login = () => {
     
 let url = "https://www.timesolution.com.ar/";
 
-  // const usernames = useSelector((state) => state.usernames);
   const navigate = useNavigate();
 
   const [input, setInput] = useState({
@@ -37,8 +37,16 @@ let url = "https://www.timesolution.com.ar/";
     error ? alert(error) : navigate('/Perfil');
     };
 
+    useEffect(() => {
+      supabase.auth.getUser().then((response) => {
+        if(!response.data.user === null) {
+          navigate("/Perfil")
+        }
+      })
+    }, [navigate])
+
   return (
-    <div>
+    <div className="background">
       <Helmet>
         {" "}
         <title>MediaSolution +</title>
