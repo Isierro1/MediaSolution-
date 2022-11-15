@@ -1,0 +1,71 @@
+.sidebar {
+  position: absolute;
+  width: 17%;
+  top: 0;
+  flex-shrink: 0;
+  background-color: hsl(207, 33%, 21%);
+  height: 100%;
+  overflow: auto;
+  font-size: 12px;
+}
+
+.sidebar-item {
+  padding: 0.75em 1em;
+  display: block;
+  transition: background-color 0.15s;
+  border-radius: 5px;
+}
+.sidebar-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-title {
+  color: hsl(218, 18%, 71%);
+  display: flex;
+  font-size: 1.2em;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.sidebar-title:hover {
+  color: white;
+}
+.sidebar-title span {
+  display: flex;
+  width: 1.5em;
+}
+
+.sidebar-title i {
+  margin-right: .8rem;
+}
+.sidebar-title .toggle-btn {
+  cursor: pointer;
+  transition: transform 0.3s;
+  background: none;
+  border: 0;
+  color: inherit;
+}
+.sidebar-item.open > .sidebar-title .toggle-btn {
+  transform: rotate(180deg);
+}
+.sidebar-content {
+  padding-top: 0.25em;
+  height: 0;
+  overflow: hidden;
+}
+.sidebar-item.open > .sidebar-content {
+  height: auto;
+}
+
+.sidebar-item.plain {
+  color: hsl(218, 18%, 71%);
+  text-decoration: none !important;
+}
+.sidebar-item.plain:hover {
+  text-decoration: underline;
+  color: white;
+  font-weight: 700;
+}
+.sidebar-item.plain i {
+  display: inline-block;
+  width: 1.7em;
+}

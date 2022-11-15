@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import supabase from "../supabase";
+import SideBar from "./SideBar";
 
 const Profile = () => {
   const navigate = useNavigate();
@@ -23,6 +24,7 @@ const Profile = () => {
   return (
     <div>
       <button onClick={() => signOut()}>Cerrar Sesión</button>
+      <SideBar/>
     </div>
   );
 };

@@ -1,0 +1,62 @@
+[
+    {
+        "title": "Expedientes",
+        "icon": "bi bi-file-earmark-text-fill",
+        "childrens": [
+            {
+                "title": "Expedientes",
+                "path": "/expedientes"
+            },
+            {
+                "title": "Notificaciones",
+                "path": "/notificaciones"
+            },
+            {
+                "title": "Agenda",
+                "path":"agenda"
+            }
+        ]
+    },
+    {
+        "title": "Contactos",
+        "icon": "bi bi-person-lines-fill",
+        "childrens": [
+            {
+                "title": "Contactos",
+                "path": "/contactos"
+            }
+        ]
+    },
+    {
+        "title": "Herramientas",
+        "icon": "bi bi-wrench-adjustable",
+        "childrens": [
+            {
+                "title": "Plantillas",
+                "path": "/plantillas"
+            },
+            {
+                "title": "Reportes",
+                "path": "/reportes"
+            },
+            {
+                "title": "Wizard",
+                "path": "/wizard"
+            }
+        ]
+    },
+    {
+        "title": "Perfil",
+        "icon": "bi bi-person-circle",
+        "childrens": [
+            {
+                "title": "Mi Perfil",
+                "path": "/miperfil"
+            },
+            {
+                "title": "Mi Saldo",
+                "path": "/misaldo"   
+            }
+        ]
+    }
+]
