@@ -66,6 +66,11 @@ const Register = () => {
       const { error } = await supabase.auth.signUp({
         email: input.email,
         password: input.password,
+        options: {
+          data: {
+            username:input.username
+          }
+        }
       }).then((response) => {
         if(response.data.user.identities.length){
           toast.success('Usuario registrado, confirma tu email para ingresar.');

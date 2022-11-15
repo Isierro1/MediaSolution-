@@ -6,7 +6,6 @@
   background-color: hsl(207, 33%, 21%);
   height: 100%;
   overflow: auto;
-  font-size: 12px;
 }
 
 .sidebar-item {
@@ -22,7 +21,7 @@
 .sidebar-title {
   color: hsl(218, 18%, 71%);
   display: flex;
-  font-size: 1.2em;
+  font-size: 1em;
   justify-content: space-between;
   cursor: pointer;
 }
@@ -35,7 +34,7 @@
 }
 
 .sidebar-title i {
-  margin-right: .8rem;
+  margin-right: 0.8rem;
 }
 .sidebar-title .toggle-btn {
   cursor: pointer;
@@ -60,11 +59,12 @@
   color: hsl(218, 18%, 71%);
   text-decoration: none !important;
 }
+
 .sidebar-item.plain:hover {
   text-decoration: underline;
-  color: white;
-  font-weight: 700;
+  color: rgb(255, 255, 255);
 }
+
 .sidebar-item.plain i {
   display: inline-block;
   width: 1.7em;

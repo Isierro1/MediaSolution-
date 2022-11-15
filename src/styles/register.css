@@ -42,7 +42,7 @@
   padding: 10px;
 }
 
-input:focus {
+.register-inputs:focus {
   outline-color: rgb(41, 189, 157);
 }
  
